@@ -29,7 +29,7 @@ npm install @supabase/supabase-js
 
 ```
 
-Dann in Terminal B in der Folder wo wir unseren project möchten:
+2. Dann in Terminal B in der Folder wo wir unseren project möchten:
 
 ```sh
 
@@ -50,7 +50,7 @@ code .
 
 ```
 
-Jetzt ein Dockerfile und .dockerignore hinzufugen
+3. In VSC: Jetzt ein Dockerfile und .dockerignore hinzufugen
 
 (Ich habe mit Abssicht die node_modules nicht hinzugefügt, um alle dependencies in node-alpine runterladen zu können )
 
@@ -88,7 +88,7 @@ Man kann jetzt etwas in den pages ändern zu testen, man sollte die änderungen 
 
 HINWEIS: Man kann das Container schnell in dein Docker-Desktop starten (oder stoppen) (Aktionen)
 
-(als repo habe ich mein .gitignore so reduziert, damit alle dependencies wieder runterladen kann, um nicht den step 1 in terminal A wieder machen zu mussen)
+(als repo habe ich mein .gitignore so reduziert, damit alle dependencies wieder runterladen kann, um nicht den step 1 und 2 nicht wieder machen zu mussen)
 
 ```
 # Logs
