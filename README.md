@@ -1,75 +1,89 @@
 # Nuxt 3 Minimal Starter
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+docker dev nuxt tailwind daisy supabase
 
-## Setup
+1. Es würde in terminal A, ein nuxt project mit alle ihre dependencies in ein node-alpine shell container installiert.
 
-Make sure to install the dependencies:
+```sh
+docker run -it --rm node:18 sh
 
-```bash
-# npm
-npm install
 
-# pnpm
-pnpm install
+npx nuxi@latest init your_app_name
+# auf die Frage, Initialize git repository ->no
 
-# yarn
-yarn install
+cd your_app_name
 
-# bun
-bun install
+npm i
+
+# Tailwind
+
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init
+
+#Daisy
+npm i -D daisyui@latest
+
+#supabase
+
+npm install @supabase/supabase-js
+
 ```
 
-## Development Server
+Dann in Terminal B in der Folder wo wir unseren project möchten:
 
-Start the development server on `http://localhost:3000`:
+```sh
 
-```bash
-# npm
-npm run dev
+# container_id kopieren die gerade in terminal A gemacht haben
 
-# pnpm
-pnpm run dev
+docker ps
 
-# yarn
-yarn dev
+# inhalt in dein project kopieren
+docker cp container_id:your_app_name .
 
-# bun
-bun run dev
+#rein gehen
+
+cd your_app_name
+
+#vsc offnen
+
+code .
+
 ```
 
-## Production
+Jetzt ein Dockerfile und .dockerignore hinzufugen
 
-Build the application for production:
+(Ich habe mit Abssicht die node_modules nicht hinzugefügt, um alle dependencies in node-alpine runterladen zu können )
 
-```bash
-# npm
-npm run build
+```dockerfile
+FROM node:18-alpine
+WORKDIR /docker-nuxt
+COPY . .
+EXPOSE 3000
+CMD ["npm","run", "dev", "--", "--host"]
 
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
 ```
 
-Locally preview production build:
+Dann den Rest der Konfigurationen von Tailwind, Daisy und Supabase gemacht. Es würde geändert/hinzugefügt:
 
-```bash
-# npm
-npm run preview
+tailwind.config.js
 
-# pnpm
-pnpm run preview
+nuxt.config.ts
 
-# yarn
-yarn preview
+utils/supabase.js
 
-# bun
-bun run preview
+assets/css/main.css
+
+.env.local
+
+Dann würde den Docker Image gemacht und dann ihre Container:
+
+```
+docker build -t name_of_the_image_you_want .
+
+docker run -d -p new_port_you_want:port_in_dockerfile -v ABSOLUTE_PATH_YOUR_WORK_APP:PATH_OF_YOUR_IMAGE --name NAME_TO_YOUR_CONTAINER_you_WANT name_or_ID_of_the_image
+
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Man kann jetzt etwas in den pages ändern zu testen, man sollte die änderungen sofort sehen.
+
+HINWEIS: Man kann das Container schnell in dein Docker-Desktop starten (oder stoppen) (Aktionen)
