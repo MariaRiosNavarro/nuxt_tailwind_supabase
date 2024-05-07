@@ -1,4 +1,4 @@
-# Nuxt 3 Minimal Starter
+# docker dev nuxt tailwind daisy supabase
 
 docker dev nuxt tailwind daisy supabase
 
