@@ -87,3 +87,21 @@ docker run -d -p new_port_you_want:port_in_dockerfile -v ABSOLUTE_PATH_YOUR_WORK
 Man kann jetzt etwas in den pages ändern zu testen, man sollte die änderungen sofort sehen.
 
 HINWEIS: Man kann das Container schnell in dein Docker-Desktop starten (oder stoppen) (Aktionen)
+
+(als repo habe ich mein .gitignore so reduziert, damit alle dependencies wieder runterladen kann, um nicht den step 1 in terminal A wieder machen zu mussen)
+
+```
+# Logs
+logs
+*.log
+
+# Misc
+.DS_Store
+.fleet
+.idea
+
+# Local env files
+.env
+.env.*
+!.env.example
+```
