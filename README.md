@@ -2,6 +2,8 @@
 
 docker dev nuxt tailwind daisy supabase
 
+### terminal A
+
 1. Es würde in terminal A, ein nuxt project mit alle ihre dependencies in ein node-alpine shell container installiert.
 
 ```sh
@@ -29,6 +31,8 @@ npm install @supabase/supabase-js
 
 ```
 
+### terminal B
+
 2. Dann in Terminal B in der Folder wo wir unseren project möchten:
 
 ```sh
@@ -49,6 +53,8 @@ cd your_app_name
 code .
 
 ```
+
+### IDE (zb VSC)
 
 3. In VSC: Jetzt ein Dockerfile und .dockerignore hinzufugen
 
