@@ -1,0 +1,5 @@
+# Local env files 
+# (node_modules sind in ein alpine sh gemacht worden, deswegen lassen es gerne öffentlich um wieder zu nehmen)
+.env
+.env.*
+!.env.example
