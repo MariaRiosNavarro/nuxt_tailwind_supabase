@@ -65,15 +65,15 @@ CMD ["npm","run", "dev", "--", "--host"]
 
 Dann den Rest der Konfigurationen von Tailwind, Daisy und Supabase gemacht. Es würde geändert/hinzugefügt:
 
-tailwind.config.js
+- tailwind.config.js
 
-nuxt.config.ts
+- nuxt.config.ts
 
-utils/supabase.js
+- utils/supabase.js
 
-assets/css/main.css
+- assets/css/main.css
 
-.env.local
+- .env.local
 
 Dann würde den Docker Image gemacht und dann ihre Container:
 
