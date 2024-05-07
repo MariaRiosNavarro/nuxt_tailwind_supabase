@@ -1,0 +1,9 @@
+{
+  "_hash": "F3vYckgOKH",
+  "project": {
+    "rootDir": "/nuxt_tailwind_supabase"
+  },
+  "versions": {
+    "nuxt": "3.11.2"
+  }
+}

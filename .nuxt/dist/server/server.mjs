@@ -1,0 +1,1 @@
+export { default } from "file:///nuxt_tailwind_supabase/node_modules/@nuxt/vite-builder/dist/runtime/vite-node.mjs"
