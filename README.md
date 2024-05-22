@@ -89,8 +89,14 @@ docker build -t name_of_the_image_you_want .
 docker run -d -p new_port_you_want:port_in_dockerfile -v ABSOLUTE_PATH_YOUR_WORK_APP:PATH_OF_YOUR_IMAGE --name NAME_TO_YOUR_CONTAINER_you_WANT name_or_ID_of_the_image
 
 ```
+zb: 
+
+docker run -d -p 3030:3000 -v /Users/maria.rios-navarro/Documents/git_hub/nuxt_tailwind_supabase:/nuxt_tailwind_supabase --name superbase_nuxt_cont 6b8808cc505292754cbe71b93ab367f47397422e0c85c96e13035c37c6c1aa8d
+
 
 Man kann jetzt etwas in den pages was ändern zu testen, man sollte die änderungen sofort sehen.
+
+
 
 HINWEIS: Man kann das Container schnell in dein Docker-Desktop starten (oder stoppen) (Aktionen)
 

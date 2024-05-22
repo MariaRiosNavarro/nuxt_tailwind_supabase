@@ -1,21 +1,21 @@
 import About from './about.vue';
 <script setup>
-import { ref, onMounted, provide } from "vue";
+import { ref, onMounted, provide } from 'vue';
 // import { createClient } from "@supabase/supabase-js";
-import { supabase } from "../utils/supabase.js";
+import { supabase } from '../utils/supabase.js';
 
 const homeSection = ref([]);
 
 const getHomeData = async () => {
   try {
-    const { data, error } = await supabase.from("home_section1").select();
+    const { data, error } = await supabase.from('home_section1').select();
     if (error) {
       throw error;
     }
     homeSection.value = data;
     console.log(data);
   } catch (error) {
-    console.error("Error fetching todos:", error.message);
+    console.error('Error fetching todos:', error.message);
     console.log(error);
   }
 };
@@ -24,7 +24,7 @@ onMounted(() => {
   getHomeData();
 });
 
-provide("supabaseClient", supabase);
+provide('supabaseClient', supabase);
 </script>
 
 <template>
